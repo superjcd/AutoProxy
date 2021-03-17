@@ -1,0 +1,5 @@
+KEY='newip'
+NEED_AUTH=True
+AUTH_USER='jcd'
+AUTH_PASSWORD='Hooya911.'
+PORT=3128
