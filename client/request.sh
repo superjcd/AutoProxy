@@ -20,10 +20,6 @@ load_config() {
 	SERVER=${SERVER:7}
 }
 
-change_proxy() {
-    . $DIR/pppoe.sh
-}
-
 send_request() {
     echo $SERVER/$KEY;
     curl $SERVER/$KEY;
@@ -31,7 +27,6 @@ send_request() {
 
 main() {
     load_config $1
-    change_proxy
     send_request
 }
 

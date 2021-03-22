@@ -1,3 +1,8 @@
-# 每30秒换一次ip， 并请求一下app应用
-* * * * * /root/dev/AutoProxy/client/request.sh /root/dev/AutoProxy/client/request.conf >> /var/py/AutoProxy/client/request.log
-* * * * * sleep 30; /root/dev/AutoProxy/client/request.sh /root/dev/AutoProxy/client/request.conf >> /var/py/AutoProxy/client/request.log
+# 拨号， 改ip
+* * * * * /usr/sbin/pppoe-stop;/usr/sbin/pppoe-start;/usr/bin/sh /root/AutoProxy/client/request.sh /root/AutoProxy/client/request.conf >> /root/logs/proxy_request.log
+
+# 请求， 没每20秒一次
+#* * * * * /usr/bin/sh /root/AutoProxy/client/request.sh /root/AutoProxy/client/request.conf >> /root/logs/proxy_request.log
+#* * * * * sleep 20; /usr/bin/sh /root/AutoProxy/client/request.sh /root/AutoProxy/client/request.conf >> /root/logs/proxy_request.log
+#* * * * * sleep 40; /usr/bin/sh /root/AutoProxy/client/request.sh /root/AutoProxy/client/request.conf >> /root/logs/proxy_request.log
+
